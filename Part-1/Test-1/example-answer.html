@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+// placed at bottom of HTML document so that the page is ready for creation of elements
+// will cause error in header
+(function() {
+  var h1, p, button, strong;
+  var h1Text, pTextBefore, buttonText, strongText;
+
+// create the elements  
+  h1 = document.createElement("H1");
+  p = document.createElement("P");
+  button = document.createElement("BUTTON");
+  strong = document.createElement("STRONG");
+
+// create the text for inside them
+  h1Text = document.createTextNode("Hello, World");
+  pTextBefore = document.createTextNode("This is just a");
+  strongText = document.createTextNode("test message");
+  buttonText = document.createTextNode("Click Me");
+
+// set up the text
+  strong.appendChild(strongText);
+  p.appendChild(pTextBefore);
+  
+  // add in the strong node as a child of the P node
+  p.appendChild(strong);
+  button.appendChild(buttonText);
+  h1.appendChild(h1Text);
+
+// append to document  
+  document.body.appendChild(h1);
+  document.body.appendChild(p);
+  document.body.appendChild(button);
+})();
+</script>
+</body>
+</html>
